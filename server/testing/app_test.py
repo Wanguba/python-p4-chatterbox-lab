@@ -147,3 +147,13 @@ class TestApp:
 
             h = Message.query.filter_by(body="Hello 👋").first()
             assert(not h)
+
+    class Message:
+     def __init__(self, body):
+        self.body = body
+    
+    class TestApp:
+     def test_message_body(self):
+        message = Message("Hello 👋")
+        assert message.body == "Hello 👋"
+
